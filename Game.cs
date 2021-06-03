@@ -54,5 +54,28 @@ namespace TicTacToe
         {
             Toss();
         }
+        private static int getUserMove(char[] board)
+        {
+            int[] validCells = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            while (true)
+            {
+                Console.WriteLine("Enter is your move (1,9): ");
+                int index = Convert.ToInt32(Console.ReadLine());
+                if (Array.Find<int>(validCells, elements => elements == index) != 0 && isSpaceFree(board, index))
+                    return index;
+
+            }
+
+        }
+        private static bool isSpaceFree(char[] board, int index)
+        {
+            return board[index] == ' ';
+        }
+        private static void makeMove(char[] board, int index, char letter)   //method to check for blank space 
+        {
+            Boolean SpaceFree = isSpaceFree(board, index);  //Getting values from parameters
+            if (SpaceFree) board[index] = letter;           //condition check
+        }
+
     }
 }
