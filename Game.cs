@@ -11,16 +11,18 @@ namespace TicTacToe
             Console.WriteLine("....|WELCOME TO TIC TAC TOE|....");
         }
 
-        public void CreateBoard()
+        public char[] CreateBoard()
         {
-
             char[] board = new char[10];        // initializing the number of character spaces in game
-            for (int i = 0; i < board.Length; i++)
+            for (int i = 1; i < board.Length; i++)
             {
                 board[i] = ' ';                // making each space empty 
 
             }
+            return board;
         }
+       
+        
 
         public static int Toss()
         {
@@ -37,6 +39,16 @@ namespace TicTacToe
                 Console.WriteLine("Player 2 inputs with O");
             }
             return ran;
+        }
+        
+        public void ShowBoard(char [] board)
+        {
+            Console.WriteLine(" " + board[1] + "|" + board[2] + "|" + board[3]);
+            Console.WriteLine("_________");
+            Console.WriteLine(" " + board[4] + "|" + board[5] + "|" + board[6]);
+            Console.WriteLine("_________");
+            Console.WriteLine(" " + board[7] + "|" + board[8] + "|" + board[9]);
+
         }
         public void Input()
         {
